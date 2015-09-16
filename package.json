@@ -1,9 +1,10 @@
 {
   "name": "language-anb",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "theme": "syntax",
   "description": "Syntax highlighting for AnB",
+  "repository": "https://github.com/Gronex/atom-language-anb",
   "engines": {
-    "atom": "*",
-    "node": "*"
+    "atom": "*"
   }
 }
