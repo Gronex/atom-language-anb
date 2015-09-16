@@ -1,0 +1,45 @@
+'scopeName': 'source.anb'
+'name': 'AnB'
+'fileTypes': ['anb']
+'patterns': [
+  {
+    'match': '#.*$'
+    'name': 'comment.anb'
+  }
+  {
+    'match': '(\\*){0,1}->(\\*){0,1}|\\bProtocol\\b|\\bTypes\\b|\\bAgent\\b|\\bNumber\\b|\\bFunction\\b|\\bSymmetric_key\\b|\\bPublicKey\\b|\\bKnowledge\\b|\\bwhere\\b|\\bActions\\b|\\bGoals\\b|\\bauthenticates\\b|\\bon\\b|\\bsecrecy\\b|\\bof\\b'
+    'name': 'keyword.anb'
+  }
+  {
+    'begin': '([a-z][a-zA-Z0-9_]*)\\s*\\('
+    'beginCaptures':
+      '1':
+        'name': 'entity.name.function.anb'
+    'end': '\\)'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
+  {
+    'match': '\\b[A-Z_][a-zA-Z0-9_]*'
+    'name': 'variable.anb'
+  }
+  {
+    'match': '\\b[a-z][a-zA-Z0-9_]*'
+    'name': 'constant.other.anb'
+  }
+  {
+    'begin': '(\\s*.+\\s*::\\s*)\\('
+    'beginCaptures':
+      '1':
+        'name': 'entity.name.type.instance.anb'
+    'end': '\\)'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
+]
